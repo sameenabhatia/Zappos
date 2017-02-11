@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data class = "ProductBinding">
+        <variable
+            name="product"
+            type="com.sameenabhatia.ilovezappos.MainActivity.Product"/>
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="0dp"
+        bind:imageBitmap="@{product.image}"
+        android:layout_weight="2"
+        android:id="@+id/imageView"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvBrandName"
+            android:textSize="20sp"
+            android:textColor="@color/color1"
+            android:text="@{product.brandName}"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvProductName"
+            android:text="@{product.productName}"
+            android:textColor="@color/color2"
+            android:textSize="25sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvPrice"
+                android:text="@{product.price}"
+                android:gravity="left"
+                android:textColor="@color/color3"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDiscount"
+                android:gravity="right"
+                android:text="@{product.discount}"
+                android:textColor="@color/color3"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>
+    </layout>
